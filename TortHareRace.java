@@ -4,7 +4,7 @@
  * Mini Project #1
  * 
  * References used for this assignment: 
- * Stack Overflow (only to look up the built in Java Random number method)
+ * Stack Overflow (only to look up the built in Java Random class)
  */
 
 import java.util.Random;
