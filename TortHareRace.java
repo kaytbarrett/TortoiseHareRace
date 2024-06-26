@@ -26,8 +26,8 @@ public class TortHareRace
         // Loop through until the tortoise or the hare crosses the finish line (meaning one reaches or exceeds 50 spaces)
         while (harePos < 50 && tortPos < 50)
         {
-            // Generate a random number at the start of each round
-            int randInt = randomNum.nextInt(11);
+            // Generate a random number 1 - 10 at the start of each round
+            int randInt = randomNum.nextInt(10) + 1;
 
             // Determine the action of the tortoise and the hare depending on that random number
             if (randInt == 1 || randInt == 2)
