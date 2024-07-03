@@ -11,21 +11,34 @@ import java.util.Random;
 
 public class TortHareRace
 {
+    // Declare and initialize the tortoise and hare positions at the class level
+    public static int [] positionArray = {1, 1};
+
+    // Create a new random number generator at the class level
+    public static Random randomNum = new Random();
+
     public static void main (String [] args)
     {
-        // Create a new random number generator
-        Random randomNum = new Random();
-
-        // Declare and initialize the tortoise and hare starting positions to 1
-        int harePos = 1;
-        int tortPos = 1;
+        // Set the tortoise and hare positions to their corresponding array values
+        int harePos = positionArray[0];
+        int tortPos = positionArray[1];
 
         // Signify the start of the race
         System.out.println("\n\nAND THEY\'RE OFF!!");
 
+        // Run the race with the simulateRace method
+        simulateRace(harePos, tortPos);
+
+        // Call the printWinner method to display the corresponding winner
+        printWinner(positionArray[0], positionArray[1]);
+    }
+
+    public static int[] simulateRace(int harePos, int tortPos)
+    {
         // Loop through until the tortoise or the hare crosses the finish line (meaning one reaches or exceeds 50 spaces)
         while (harePos < 50 && tortPos < 50)
         {
+
             // Generate a random number 1 - 10 at the start of each round
             int randInt = randomNum.nextInt(10) + 1;
 
@@ -77,10 +90,12 @@ public class TortHareRace
             // Call the printRoundOutcome method to print the race positions for that round
             printRoundOutcome(harePos, tortPos);
 
+            // Set the array values to their corresponding hare and tortoise position values
+            positionArray[0] = harePos;
+            positionArray[1] = tortPos;
         }
 
-        // Call the printWinner method to display the corresponding winner
-        printWinner(harePos, tortPos);
+        return positionArray;
     }
 
     public static void printRoundOutcome(int harePos, int tortPos)
